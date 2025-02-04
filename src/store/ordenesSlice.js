@@ -3,22 +3,22 @@ import axios from 'axios';
 
 // Async Thunks
 export const fetchOrdenes = createAsyncThunk('ordenes/fetchOrdenes', async () => {
-  const response = await axios.get('/api/ordenes'); // Usa la ruta relativa
+  const response = await axios.get('https://api-gol-integrador.vercel.app/api/ordenes'); // Usa la ruta relativa
   return response.data;
 });
 
-export const addOrden = createAsyncThunk('ordenes/addOrden', async (orden) => {
-  const response = await axios.post('/api/ordenes', orden);
+export const addOrden = createAsyncThunk('https://api-gol-integrador.vercel.app/ordenes/addOrden', async (orden) => {
+  const response = await axios.post('https://api-gol-integrador.vercel.app/api/ordenes', orden);
   return response.data;
 });
 
-export const updateOrden = createAsyncThunk('ordenes/updateOrden', async ({ id, ...orden }) => {
+export const updateOrden = createAsyncThunk('https://api-gol-integrador.vercel.app/ordenes/updateOrden', async ({ id, ...orden }) => {
   const response = await axios.put(`/api/ordenes/${id}`, orden);
   return response.data;
 });
 
-export const deleteOrden = createAsyncThunk('ordenes/deleteOrden', async (id) => {
-  await axios.delete(`/api/ordenes/${id}`);
+export const deleteOrden = createAsyncThunk('https://api-gol-integrador.vercel.app/ordenes/deleteOrden', async (id) => {
+  await axios.delete(`https://api-gol-integrador.vercel.app/api/ordenes/${id}`);
   return id;
 });
 
