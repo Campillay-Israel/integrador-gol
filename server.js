@@ -38,9 +38,9 @@ app.get('/', (req, res) => {
 
 // Inicia el servidor
 const PORT = 3001;
-//app.listen(PORT, () => {
- // console.log(`Servidor proxy corriendo en http://localhost:${PORT}`);
-//}
+app.listen(PORT, () => {
+ console.log(`Servidor proxy corriendo en http://localhost:${PORT}`);
+});
 
 
 module.exports = app;
